@@ -3,13 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "underscore": "^1.9.1",
     "vue": "^2.6.6",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
@@ -25,6 +24,7 @@
     "lint-staged": "^8.1.4",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
+    "underscore": "^1.9.1",
     "vue-template-compiler": "^2.5.21"
   },
   "gitHooks": {
