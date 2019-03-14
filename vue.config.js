@@ -1,5 +1,6 @@
+let isProduction = process.env.NODE_ENV === 'production'
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production'
+  publicPath: isProduction
     ? '/production-sub-path/'
     : '/',
   productionSourceMap: false,
@@ -14,7 +15,7 @@ module.exports = {
       }
     },
     before (app) {
-      if (process.env.NODE_ENV !== 'production') {
+      if (!isProduction) {
         let mockPlugin = require('./mock-plugin')
         app.use(mockPlugin({
           mockConf: './mock/mock-conf.js'
