@@ -3,9 +3,12 @@ let Home = () => import('../page/Home')
 let Demo = () => import('../page/Demo')
 export default [
   {
-    path: '/',
+    path: '/Demo',
     name: 'Demo',
-    component: Demo
+    component: Demo,
+    meta: {
+      requireAuth: true
+    }
   },
   {
     path: '/Login',
@@ -15,11 +18,14 @@ export default [
   {
     path: '/Home',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta: {
+      requireAuth: true
+    }
   },
   // 默认没匹配到跳转到登录页
   {
     path: '*',
-    redirect: '/'
+    redirect: '/Login'
   }
 ]

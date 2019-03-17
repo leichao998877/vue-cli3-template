@@ -1,6 +1,5 @@
 import http from './http'
-import Vue from 'vue'
-function init (vue) {
+function init (Vue, vue) {
   http.initContext(vue)
   Vue.prototype.$http = http
 }

@@ -21,7 +21,16 @@ export default {
   props: {},
   watch: {},
   methods: {},
-  created () {},
+  created () {
+    window.sessionStorage.clear()
+    this.$http.post('/getUserInfo', {}, res => {
+      window.sessionStorage.setItem('isLogin', 'true')
+    }, err => {
+      console.log(err)
+    })
+  },
+  mounted () {
+  },
   beforeDestroy () {}
 }
 </script>
