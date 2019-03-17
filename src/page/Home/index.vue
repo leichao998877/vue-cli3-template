@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    {{text}}
     <div v-for="(item, index) in arr" :key="index">{{'state:' + item.text}}</div>
     <p v-for="(item) in doneArr" :key="item.id + item.text">{{'getter:' + item.text}}</p>
   </div>
@@ -10,6 +11,11 @@ import axios from 'axios'
 import { mapState, mapGetters } from 'vuex'
 export default {
   name: 'home',
+  data () {
+    return {
+      text: ''
+    }
+  },
   components: {
   },
   computed: {
@@ -27,6 +33,9 @@ export default {
     ])
   },
   created () {
+    debugger
+    this.text = process.env.NODE_ENV === 'production' ? 'production' : 'development'
+    console.log('env:' + process.env.NODE_ENV)
     let data = { 'inputUsername': 'cpy01', 'inputPassword': 'MTIzNDU2MjAxOS0wMy0xMiAyMTo1Mjo0MQ==', 'userType': 'B', 'tpl': '/income', 'inputCaptcha': '', 'token': '' }
     axios({
       method: 'post',

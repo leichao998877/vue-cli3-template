@@ -2,7 +2,7 @@
 
 ## 安装工程
 ```
-yarn install
+yarn install or yarn
 ```
 
 ### 运行开发环境并且打开浏览器
