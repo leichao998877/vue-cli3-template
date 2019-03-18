@@ -7,14 +7,14 @@ module.exports = {
   devServer: {
     proxy: {
       '/login': {
-        target: 'http://192.168.0.138:8083', // 进项标准化测试服务器地址
+        target: 'http://192.168.8.1:8083', // 进项标准化测试服务器地址
         changeOrigin: true,
         pathRewrite: {
           '^/login': '/'
         }
       },
       '/development': {
-        target: 'http://192.168.0.138:8083', // 进项标准化测试服务器地址
+        target: 'http://192.168.8.1:8083', // 进项标准化测试服务器地址
         changeOrigin: true,
         pathRewrite: {
           '^/development': '/'
